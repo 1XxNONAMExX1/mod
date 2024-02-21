@@ -1076,7 +1076,7 @@ class PlayState extends MusicBeatState
 		#if LUA_ALLOWED
 		for (notetype in noteTypeMap.keys())
 		{
-			var luaToLoad:String = Paths.modFolders('custom_notetypes/' + notetype + '.lua');
+			var luaToLoad:String =Paths.getPreloadPath('custom_notetypes/' + notetype + '.lua');
 			if(FileSystem.exists(luaToLoad))
 			{
 				luaArray.push(new FunkinLua(luaToLoad));
@@ -1427,9 +1427,6 @@ class PlayState extends MusicBeatState
 
 		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
 
-			foldersToCheck.insert(0, Paths.getPreloadPath('shaders/'));
-
-		for(mod in Paths.getGlobalMods())
 			foldersToCheck.insert(0, Paths.getPreloadPath('shaders/'));
 		
 		for (folder in foldersToCheck)

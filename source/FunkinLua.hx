@@ -2889,9 +2889,6 @@ class FunkinLua {
 
 			foldersToCheck.insert(0, Paths.getPreloadPath('shaders/'));
 
-		for(mod in Paths.getGlobalMods())
-			foldersToCheck.insert(0, Paths.getPreloadPath('shaders/'));
-		
 		for (folder in foldersToCheck)
 		{
 			if(FileSystem.exists(folder))

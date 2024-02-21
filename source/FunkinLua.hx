@@ -2547,7 +2547,7 @@ class FunkinLua {
 		{
 			try {
 				if(!absolute)
-					File.saveContent(Paths.mods(path), content);
+					File.saveContent(path, content);
 				else
 					File.saveContent(path, content);
 
@@ -2887,10 +2887,10 @@ class FunkinLua {
 
 		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
 
-			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/shaders/'));
+			foldersToCheck.insert(0, Paths.getPreloadPath('shaders/'));
 
 		for(mod in Paths.getGlobalMods())
-			foldersToCheck.insert(0, Paths.mods(mod + '/shaders/'));
+			foldersToCheck.insert(0, Paths.getPreloadPath('shaders/'));
 		
 		for (folder in foldersToCheck)
 		{
